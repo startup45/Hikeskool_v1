@@ -1,0 +1,82 @@
+
+import React, { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+
+const Navbar: React.FC = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  return (
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white shadow-soft py-2"
+          : "bg-transparent py-4"
+      }`}
+    >
+      <div className="container mx-auto flex items-center justify-between px-4">
+        <div className="flex items-center">
+          <span className="text-2xl font-bold text-foreground font-poppins">
+            Pastel<span className="text-blue-500">Learn</span>
+          </span>
+        </div>
+
+        <div className="hidden md:flex items-center space-x-8">
+          <button
+            onClick={() => scrollToSection("home")}
+            className="font-medium hover:text-blue-500 transition-colors"
+          >
+            Home
+          </button>
+          <button
+            onClick={() => scrollToSection("courses")}
+            className="font-medium hover:text-blue-500 transition-colors"
+          >
+            Courses
+          </button>
+          <button
+            onClick={() => scrollToSection("features")}
+            className="font-medium hover:text-blue-500 transition-colors"
+          >
+            Features
+          </button>
+          <button
+            onClick={() => scrollToSection("testimonials")}
+            className="font-medium hover:text-blue-500 transition-colors"
+          >
+            Testimonials
+          </button>
+        </div>
+
+        <div>
+          <Button 
+            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full"
+          >
+            Get Started
+          </Button>
+        </div>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
