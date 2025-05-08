@@ -36,7 +36,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
           <span className="text-2xl font-bold text-foreground font-poppins">
-            Pastel<span className="text-blue-500">Learn</span>
+            Hike<span className="text-blue-500">Skool</span>
           </span>
         </div>
 
