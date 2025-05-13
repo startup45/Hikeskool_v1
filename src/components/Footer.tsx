@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           <div>
             <h3 className="text-xl font-bold mb-4">
-              Pastel<span className="text-blue-500">Learn</span>
+              Hike<span className="text-blue-500">Skool</span>
             </h3>
             <p className="text-gray-600 mb-4">
               Empowering learners worldwide with quality education and expert-led courses.
@@ -71,13 +71,13 @@ const Footer: React.FC = () => {
             <h4 className="font-bold mb-4">Contact Us</h4>
             <ul className="space-y-2">
               <li className="text-gray-600">
-                Email: hello@pastellearn.com
+                Email: admin@hikeskool.com
               </li>
               <li className="text-gray-600">
-                Phone: +1 (123) 456-7890
+                Phone: +91 9566602407
               </li>
               <li className="text-gray-600">
-                Address: 123 Education St, Learning City
+                Address: Tirupur,India 
               </li>
             </ul>
           </div>
@@ -85,8 +85,9 @@ const Footer: React.FC = () => {
 
         <div className="border-t pt-8 text-center">
           <p className="text-gray-500">
-            © {new Date().getFullYear()} PastelLearn. All rights reserved.
+            © {new Date().getFullYear()} Hikeskool. All rights reserved.
           </p>
+          <p>Product of <b><a href="www.develupers.in>Develupers</a>"</b>></></p>
         </div>
       </div>
     </footer>
