@@ -8,6 +8,8 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import ScrollReveal from "@/components/ScrollReveal";
 import Preloader from "@/components/Preloader";
+import DepartmentCards from "@/components/DepartmentCards";
+import WhatsAppChat from "@/components/WhatsAppChat";
 
 const Index = () => {
   const [contentLoaded, setContentLoaded] = useState(false);
@@ -61,6 +63,10 @@ const Index = () => {
           </ScrollReveal>
           
           <ScrollReveal>
+            <DepartmentCards />
+          </ScrollReveal>
+          
+          <ScrollReveal>
             <FeaturesSection />
           </ScrollReveal>
           
@@ -69,6 +75,7 @@ const Index = () => {
           </ScrollReveal>
           
           <Footer />
+          <WhatsAppChat />
         </>
       )}
     </div>

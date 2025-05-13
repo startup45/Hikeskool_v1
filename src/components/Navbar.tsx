@@ -1,6 +1,16 @@
 
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+} from "@/components/ui/navigation-menu";
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,9 +45,11 @@ const Navbar: React.FC = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         <div className="flex items-center">
-          <span className="text-2xl font-bold text-foreground font-poppins">
-            Hike<span className="text-blue-500">Skool</span>
-          </span>
+          <Link to="/">
+            <span className="text-2xl font-bold text-foreground font-poppins">
+              Hike<span className="text-blue-500">Skool</span>
+            </span>
+          </Link>
         </div>
 
         <div className="hidden md:flex items-center space-x-8">
@@ -65,14 +77,24 @@ const Navbar: React.FC = () => {
           >
             Testimonials
           </button>
+          <Link to="/apply-mentor">
+            <Button 
+              variant="outline"
+              className="text-blue-500 border-blue-500 hover:bg-blue-50"
+            >
+              Apply as Mentor
+            </Button>
+          </Link>
         </div>
 
         <div>
-          <Button 
-            className="bg-blue-500 hover:bg-blue-600 text-white rounded-full"
-          >
-            Get Started
-          </Button>
+          <Link to="/get-started">
+            <Button 
+              className="bg-blue-500 hover:bg-blue-600 text-white rounded-full"
+            >
+              Get Started
+            </Button>
+          </Link>
         </div>
       </div>
     </nav>
